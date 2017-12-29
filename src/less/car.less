@@ -1,0 +1,140 @@
+@charset: "utf-8";
+
+/* web字体引入 */
+
+// @font-face {
+//     font-family: "LedNum";
+//     src: url("../fonts/ledNumber.TTF") format("truetype");
+// }
+// @font-face {
+//     font-family: "hanYi";
+//     src: url("../fonts/hanYi.ttf") format("truetype");
+// }
+
+/* 通用样式 */
+
+// html,
+// body {
+//     width: 100%;
+//     height: 100%;
+//     overflow-x: hidden;
+// }
+// body {
+//     font-family: "Microsoft Yahei", Arial, sans-serif;
+//     .z(font-size,
+//     26);
+//     color: #fff;
+// }
+.clearfix {
+    zoom: 1;
+    &:after {
+        content: "";
+        display: block;
+        clear: both;
+        overflow: hidden;
+    }
+}
+
+
+
+@b: #0ff; // blue
+@f: #c7efff; // 字体颜色
+// mixins
+// 与设计图缩放
+.z(@name, @num) {
+    // @{name}: @num * (1920 / 3840) / 100rem; // rem布局
+    @{name}: @num
+}
+
+.h(@num) {
+    .z(height, @num);
+    .z(line-height, @num);
+}
+
+.f(@num) {
+    .z(font-size, @num);
+}
+
+.s(@w, @h) {
+    .z(width, @w);
+    .z(height, @h);
+}
+
+.ff() {
+    font-family: "宋体", "Microsoft Yahei", Arial, sans-serif;
+}
+
+.fff() {
+    font-family: "hanYi", "Microsoft Yahei", Arial, sans-serif;
+}
+
+.p (@t, @l) {
+    position: absolute;
+    .z(top, @t);
+    .z(left, @l);
+}
+
+.default {
+    .s(350px, auto);
+    // margin: 30px auto;
+    position: absolute;
+    text-align: center;
+    overflow: hidden;
+    background: url(http://img05.tooopen.com/images/20140404/sy_58241958989.jpg) no-repeat center;
+    // background-size: cover;
+     .f(12px);
+    &-header {
+        list-style: none;
+        position: relative;
+        top: 0;
+        width: 100%;
+    }
+    &-body {
+        position: relative;
+        height: auto;
+        /* 阳历 */
+        .solar {
+            .h(25px)
+        }
+        /* 阴历 */
+        .lunar {
+            .h(25px);
+            .ff();
+        }
+        div {
+            cursor: pointer;
+            &.cur {
+                background-color: rgba(204, 89, 41, 1)
+            }
+            &.curOther {
+                background-color: rgba(204, 89, 41, .7)
+            }
+            &:hover {
+                background-color: rgba(204, 89, 41, .5);
+            }
+            &.festival {
+                color: #007acc;
+            }
+        }
+    }
+    &-ctrl {
+        text-align: center;
+        .prevMonth,
+        .nextMonth {
+            padding: 10px;
+            background-color: rgba(255, 255, 255,0)
+        }
+    }
+    &-header div,
+    &-body div {
+        float: left;
+        .s(50px, 50px);
+        line-height: 50px;
+        border: 1px solid #ccc;
+        overflow: hidden; // border-radius: 50%;
+    }
+    .prevData,
+    .nextData {
+        color: #999
+    }
+}

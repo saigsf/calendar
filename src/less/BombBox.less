@@ -1,0 +1,88 @@
+
+html,
+body{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    position: relative;
+}
+
+/* 默认主题 */
+.window_boundingBox{
+    border: 1px solid #333;
+    box-shadow: 0 0 10px #666;
+    position: fixed;
+    z-index: 999;
+    background-color: #fff;
+    .window_header{
+        padding: 5px;
+        background-color: #333;
+        color: #fff;
+        font-size: 24px;
+        text-align: center;
+    }
+    .window_body{
+        padding: 10px;
+        
+    }
+    .window_footer{
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        bottom: 20px;
+    }
+    .window_alertBtn{
+        width: 80px;
+    }
+    .window_closeBtn{
+        padding: 5px 10px;
+        background-color: #333;
+        color: #fff;
+        font-size: 24px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+    }
+    .window_confirmBtn{
+        width: 80px;
+        margin-right: 20px;
+    }
+    .window_cancelBtn{
+        width: 80px;
+    }
+    .window_promptBtn{
+        width: 80px;
+        margin-right: 20px;
+    }
+    .window_promptInputWrapper{
+        text-align: center;
+    }
+    .window_promptInput{
+        border: 1px solid #666;
+        padding: 2px
+    }
+    
+}
+.window_mask {
+    z-index: 998;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+/* 主题1 */
+.window_blue {
+    border: 1px solid rgb(14, 116, 233);
+    box-shadow: 0 0 10px rgb(14, 116, 233);
+    .window_header{
+        background-color: rgb(14, 116, 233);
+    }
+    .window_closeBtn{
+        background-color: rgb(14, 116, 233);
+    }
+}
+
